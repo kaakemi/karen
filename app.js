@@ -46,5 +46,17 @@ app.get("/readiness", (request, response)=>{
         });
 });
 
+app.get("/consulta-cadastro", (request, response)=>{
+    return response
+        .status(200)
+        .json({
+            message:"Meu app está pronto",
+            platform:os.platform(),
+            freemen:os.freemem(),
+            homedir: os.homedir(),
+            date:new Date().getTime()
+        });
+});
+
 
 module.exports = app;
