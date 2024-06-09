@@ -1,6 +1,18 @@
 const express = require("express");
 const os = require("os");
 const app = express();
+const mysql = require("mysql");
+
+const conexao = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"root"
+});
+
+conexao.connect(function(erro){
+    if (erro) throw erro;
+    console.log("Conectado")
+});
 
 app.get("/", (request, response)=>{
     return response
