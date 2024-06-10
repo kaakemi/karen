@@ -6,7 +6,9 @@ const mysql = require("mysql");
 const conexao = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"root"
+    port:3306,
+    password:"",
+    database:"cloud"
 });
 
 conexao.connect(function(erro){
@@ -47,15 +49,14 @@ app.get("/readiness", (request, response)=>{
 });
 
 app.get("/consulta-cadastro", (request, response)=>{
-    return response
-        .status(200)
-        .json({
-            message:"Meu app está pronto",
-            platform:os.platform(),
-            freemen:os.freemem(),
-            homedir: os.homedir(),
-            date:new Date().getTime()
-        });
+    const query = 'SELECT * from colaborador';
+    conexao.query(query,(erro,resultado)=>{
+        if (erro) {
+            console.error('Erro ao executar a consulta', erro);
+            return response.status(500).json({error:'Erro ao consultar dados'})
+        }
+        return response.status(200).json(resultado);
+    });
 });
 
 
