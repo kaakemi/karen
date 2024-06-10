@@ -1,4 +1,4 @@
-create database colaborador;
+create database cloud;
 
 CREATE Table Colaborador(
                codColaborador integer auto_increment not null unique key,
