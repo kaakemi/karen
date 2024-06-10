@@ -13,6 +13,7 @@ CREATE Table Colaborador(
                 bairro varchar(100) not null,
                 cidade varchar(100) not null,
                 uf varchar(2) not null
+);
 
 INSERT INTO colaborador (cpf, nome, dataNasc, telefone, email, cep, logradouro, numero, bairro, cidade, uf)
 VALUES 
