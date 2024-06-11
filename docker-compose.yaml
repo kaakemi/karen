@@ -1,4 +1,4 @@
-version: "3.3"
+
 
 services:
   servidor_mysql:
@@ -15,5 +15,8 @@ services:
           memory: 4G
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - TZ=America/Sao_Paulo
+      environment:
+        MYSQL_ROOT_PASSWORD:root
+        MYSQL_USER:user2
+        MYSQL_PASSWORD:senha
+        TZ:America/Sao_Paulo

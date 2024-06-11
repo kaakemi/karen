@@ -1,11 +1,11 @@
 create database cloud;
 
-CREATE Table Colaborador(
+CREATE Table cloud.colaborador(
                codColaborador integer auto_increment not null unique key,
                 cpf varchar(14) not null primary key,
                 nome varchar(100) not null,
-                dataNasc varchar(10) not null,
-                telefone varchar(14) not null, 
+                dataNasc varchar(15) not null,
+                telefone varchar(15) not null, 
                 email varchar(100) not null,
                 cep varchar(9) not null, 
                 logradouro varchar(100) not null,

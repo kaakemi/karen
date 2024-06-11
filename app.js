@@ -2,12 +2,13 @@ const express = require("express");
 const os = require("os");
 const app = express();
 const mysql = require("mysql");
+require('dotenv').config();
 
 const conexao = mysql.createConnection({
-    host:"localhost",
+    host:process.env.DB_HOST ?? "localhost",
     user:"root",
-    port:33060,
-    password:"",
+    port:3306,
+    password:"123456",
     database:"cloud"
 });
 
@@ -20,7 +21,7 @@ app.get("/", (request, response)=>{
     return response
         .status(200)
         .json({
-            message:"Olá"
+            message:"Olá mundo"
         });
 });
 
