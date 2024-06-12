@@ -1,19 +1,19 @@
 const express = require("express");
 const os = require("os");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 require('dotenv').config();
 
 const conexao = mysql.createConnection({
     host:process.env.DB_HOST,
-    port:3306,
+    port:3010,
     user:'root',
     password:'123456',
     database:'cloud'
 });
 
-conexao.connect(function(erro){
-    if (erro) {
+conexao.connect((error)=>{
+    if (error) {
         console.error('Erro ao conectar: ', error);
         return;
     }
