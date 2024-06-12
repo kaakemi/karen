@@ -5,15 +5,18 @@ const mysql = require("mysql");
 require('dotenv').config();
 
 const conexao = mysql.createConnection({
-    host:process.env.DB_HOST ?? "localhost",
-    user:"root",
+    host:process.env.DB_HOST,
     port:3306,
-    password:"123456",
-    database:"cloud"
+    user:'root',
+    password:'123456',
+    database:'cloud'
 });
 
 conexao.connect(function(erro){
-    if (erro) throw erro;
+    if (erro) {
+        console.error('Erro ao conectar: ', error);
+        return;
+    }
     console.log("Conectado")
 });
 
