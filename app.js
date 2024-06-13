@@ -53,7 +53,7 @@ app.get("/readiness", (request, response)=>{
 });
 
 app.get("/consulta-cadastro", (request, response)=>{
-    const query = 'SELECT * from colaborador';
+    const query = 'SELECT * from colaborador;';
     conexao.query(query,(erro,resultado)=>{
         if (erro) {
             console.error('Erro ao executar a consulta', erro);

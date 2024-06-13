@@ -1,7 +1,9 @@
-create database cloud;
-use cloud;
+CREATE DATABASE cloud;
 
-CREATE Table colaborador(
+USE CLOUD;
+
+CREATE Table Colaborador(
+               codColaborador integer auto_increment not null unique key,
                 nome varchar(100) not null,
                 dataNasc varchar(15) not null,
                 telefone varchar(15) not null, 
@@ -14,7 +16,7 @@ CREATE Table colaborador(
                 uf varchar(2) not null
 );
 
-INSERT INTO colaborador (nome, dataNasc, telefone, email, cep, logradouro, numero, bairro, cidade, uf)
+INSERT INTO colaborador (cpf, nome, dataNasc, telefone, email, cep, logradouro, numero, bairro, cidade, uf)
 VALUES 
 ('Karen Akemi', '03/10/1983', '(18) 98131-1824', 'karenakemibb@gamil.com', '15015-010', 'Rua Angeolino Caseli', 82, 'Vila Redentora', 'São José do Rio Preto', 'SP'),
 ('Marcelo Maykon', '19/05/1972', '(18) 98110-4916', 'mykbotelho@hotmail.com', '15015-010', 'Rua Angeolino Caseli', 82, 'Vila Redentora', 'São José do Rio Preto', 'SP'),
