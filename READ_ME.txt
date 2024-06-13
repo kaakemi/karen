@@ -1,3 +1,6 @@
+Aluna: Karen Akemi Tubaki
+RA: 1048221154-2
+
 Orientações para utilização
 
 Baixar o container do DockerHub:
@@ -39,7 +42,7 @@ exit
 Executando a aplicação:docker   
 docker run -p 3004:3004 -e DB_HOST=172.17.0.5 --name karenativ karenakemi/karenativ
 
-Acesse http://localhost:3000
+Acesse http://localhost:3004
 
 End-points:
 /liveness
